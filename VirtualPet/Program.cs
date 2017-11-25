@@ -10,6 +10,10 @@ namespace VirtualPet
     {
         static void Main(string[] args)
         {
+            //Instantiate the pet
+            VirtualPet pet1 = new VirtualPet ("Hairy", true, true, false, false, 0);
+
+
         }
     }
 }
