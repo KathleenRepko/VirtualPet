@@ -13,6 +13,9 @@ namespace VirtualPet
             //Instantiate the pet
             VirtualPet pet1 = new VirtualPet ("Hairy", true, true, false, false, 0);
 
+            Console.WriteLine("Here is information about your virtual pet:");
+            pet1.PetStats();
+
 
         }
     }
