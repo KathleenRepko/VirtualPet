@@ -51,7 +51,7 @@ namespace VirtualPet
             this.waste = waste;
         }
 
-        //Method:
+        //Methods:
         public void PetStats()
         {
             Console.WriteLine("Pet name: " + name);
@@ -60,14 +60,76 @@ namespace VirtualPet
             Console.WriteLine(name + " is sick: " + isSick);
             Console.WriteLine(name + " is bored: " + isBored);
             if (waste == 0)
-            { Console.WriteLine(name + " does not need to go potty."); }
+            {
+                Console.WriteLine(name + " does not need to go potty.");
+            }
             else if (waste == 1)
-            { Console.WriteLine(name + " needs to pee."); }
+            {
+                Console.WriteLine(name + " needs to pee.");
+            }
             else if (waste == 2)
-            { Console.WriteLine(name + " needs to poo."); }
+            {
+                Console.WriteLine(name + " needs to poo.");
+            }
             else
-            { Console.WriteLine(name + " is confused."); }
+            {
+                Console.WriteLine(name + " is confused.");
+            }
+        }
 
+        public void FeedPet()
+        {
+            if (isHungry == false)
+            {
+                Console.WriteLine(name + " was not hungry and has overeaten!");
+            }
+            else if (isHungry == true)
+            {
+                isHungry = false;
+                Console.WriteLine(name + " is not hungry.");
+            }
+            waste = 2;
+        }
+
+        public void WaterPet()
+        {
+            isThirsty = false;
+            Console.WriteLine(name + " is not thisty.");
+            waste = 1;
+        }
+
+        public void CareForPet()
+        {
+            if (isSick == false)
+            {
+                Console.WriteLine(name + " is not sick, but loves the extra attention.");
+            }
+            else if (isSick == true)
+            {
+                Console.WriteLine(name + " feels much better.");
+            }
+            isSick = false;
+            isBored = true;
+        }
+
+        public void PlayWithPet()
+        {
+            isBored = false;
+            Console.WriteLine(name + " loves to play all the time!");
+            isThirsty = true;
+        }
+
+        public void TakePetOutside()
+        {
+            if (waste == 0)
+            {
+                Console.WriteLine(name + " loves to be outside all the time!");
+            }
+            else if (waste == 1 || waste == 2)
+            {
+                Console.WriteLine(name + " feels better!");
+            }
+            waste = 0;
         }
 
     }
